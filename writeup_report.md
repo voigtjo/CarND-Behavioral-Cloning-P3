@@ -1,4 +1,4 @@
-# **Traffic Sign Recognition** 
+# **CarND-Behavioral Cloning** 
 
 ### Writeup for the CarND-Behavioral Cloning Project
 
@@ -14,12 +14,12 @@ The goals / steps of this project are the following:
 [model_lost]: ./images/model_lost_8.png "Model Lost"
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation. 
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation. 
 
 ---
-###Files Submitted & Code Quality
+### Files Submitted & Code Quality
 
-####1. Submission includes all required files and can be used to run the simulator in autonomous mode
+#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
 * Model.py containing the script to create and train the model
@@ -33,23 +33,23 @@ My project includes the following files:
 python drive.py model.h5
 ```
 
-####3. Submission code is usable and readable
+#### 3. Submission code is usable and readable
 
 The model.py file contains the code for training and saving the convolution neural network. I applied the model from nvidia for autonomous driving https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/
 
 ![alt text][cnn_architecture]  
 
-####2. Attempts to reduce overfitting in the model
+#### 2. Attempts to reduce overfitting in the model
 
 I didn't modify the model by applying regularization techniques like [Dropout](https://en.wikipedia.org/wiki/Dropout_(neural_networks)) or [Max pooling](https://en.wikipedia.org/wiki/Convolutional_neural_network#Max_pooling_shape). 
 I played around with the number of the training epochs low and kept a very with just two epochs very low.
 
-####3. Model parameter tuning
+#### 3. Model parameter tuning
 
 The model used an adam optimizer with Mean Squared Error, with the default learning rate from 0.001. 
 
 
-####4. Appropriate training data
+#### 4. Appropriate training data
 
 I imported the images of the center, left and right cameras of the provided training data. The angle for the left and right camera was corrected by +0.25 and -0.25. The test data has been extended by flipped images since the training data describe a large counterclockwise curve.
 
@@ -57,4 +57,4 @@ The system was trained on 35872 samples and validated on 9644 samples. The follo
 
 ![alt text][model_lost]
 
-After the training with two epochs (or alternativly more), the car was driving down the road all the time on the first track: video.mp4
+After the training with two epochs (or alternatively more), the car was driving down the road all the time on the first track: video.mp4
